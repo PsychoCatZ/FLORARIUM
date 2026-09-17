@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FLORARIUM — комнатные растения с доставкой</title>
+  <meta name="description" content="FLORARIUM — интернет-магазин комнатных растений: каталог с подбором по свету и уходу, тест «Подбери растение», доставка по Москве.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2218%22 font-size=%2218%22>🌿</text></svg>">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo" aria-label="FLORARIUM — на главную">
+        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="20" fill="#2f5233"/>
+          <path d="M20 30c0-8 4-12 9-14-2 9-5 13-9 14Zm0 0c0-8-4-12-9-14 2 9 5 13 9 14Z" fill="#e3ecdf"/>
+        </svg>
+        FLORARIUM
+      </a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <ul>
+          <li><a href="index.html" aria-current="page">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="favorites.html">Избранное</a></li>
+          <li><a href="#care">Уход за растениями</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="favorites.html" class="icon-btn icon-btn--badged" aria-label="Избранное">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5c-.3 0-.6-.1-.8-.3C7.6 17.1 4 13.9 4 10c0-2.8 2.2-5 5-5 1.5 0 2.9.7 3.8 1.9C13.7 5.7 15.1 5 16.6 5c2.8 0 5 2.2 5 5 0 3.9-3.6 7.1-7.2 10.2-.2.2-.5.3-.8.3Z"/></svg>
+          <span class="badge-count" data-wish-count>0</span>
+        </a>
+        <button type="button" class="icon-btn icon-btn--badged" data-open-cart aria-label="Открыть корзину">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h15l-1.6 8.6a2 2 0 0 1-2 1.65H9.1a2 2 0 0 1-2-1.65L5 3H2M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm9 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="badge-count" data-cart-count>0</span>
+        </button>
+        <button type="button" class="nav-toggle" data-nav-toggle aria-haspopup="dialog" aria-label="Открыть меню">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">Магазин комнатных растений в Москве</p>
+          <h1>Растения, которые правда приживаются</h1>
+          <p>Мы отбираем крепкие экземпляры, честно описываем уровень сложности ухода и помогаем подобрать растение под освещение вашей квартиры — а не наоборот.</p>
+          <div class="hero__actions">
+            <a href="catalog.html" class="btn btn--accent">Смотреть каталог</a>
+            <button type="button" class="btn btn--secondary" data-open-quiz>Пройти тест «Подбери растение»</button>
+          </div>
+          <div class="hero__stats">
+            <div><strong>18</strong><span>видов в каталоге</span></div>
+            <div><strong>4.6</strong><span>средняя оценка</span></div>
+            <div><strong>2–4 дня</strong><span>доставка по Москве</span></div>
+          </div>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <div class="hero__art-item" data-hero-plant="monstera-deliciosa"></div>
+          <div class="hero__art-item" data-hero-plant="pilea-peperomioides"></div>
+          <div class="hero__art-item" data-hero-plant="echeveria-elegans"></div>
+          <div class="hero__art-item" data-hero-plant="strelitzia-nicolai"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Почему FLORARIUM</p>
+            <h2>Покупка растения без сюрпризов</h2>
+          </div>
+        </div>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));">
+          <article class="feature-card">
+            <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v6m0 0-3-3m3 3 3-3M5 21h14M7 21c0-5 2-8 5-9 3 1 5 4 5 9"/></svg></div>
+            <h3>Честная сложность ухода</h3>
+            <p>На каждой карточке — реальный уровень: «для начинающих», «средний» или «для опытных», без приукрашивания.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21c4-3 7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 3 8 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
+            <h3>Подбор под ваш свет</h3>
+            <p>Фильтры и тест-квиз учитывают освещённость помещения, чтобы растение действительно прижилось.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+            <h3>Карантин и проверка</h3>
+            <p>Каждое растение две недели живёт в карантинной теплице и осматривается на вредителей перед продажей.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+            <h3>Понятная логистика</h3>
+            <p>Курьером в термокоробе по Москве или самовывоз из шоурума — выбираете при оформлении заказа.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container quiz-banner">
+        <div>
+          <p class="eyebrow" style="color:#cfe0c8;">Не знаете, с чего начать?</p>
+          <h2>Пройдите тест и получите 3 растения под ваши условия</h2>
+          <p>Три коротких вопроса про свет, опыт и питомцев — и мы подберём растения, которые действительно впишутся в ваш дом.</p>
+        </div>
+        <button type="button" class="btn btn--accent" data-open-quiz>Пройти тест за 1 минуту</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Бестселлеры</p>
+            <h2>Чаще всего выбирают наши покупатели</h2>
+          </div>
+          <a href="catalog.html" class="link-btn">Весь каталог →</a>
+        </div>
+        <div class="grid" data-featured-grid></div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--color-surface-alt);">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Новинки</p>
+            <h2>Недавно приехали в шоурум</h2>
+          </div>
+          <a href="catalog.html" class="link-btn">Смотреть все →</a>
+        </div>
+        <div class="grid" data-new-grid></div>
+      </div>
+    </section>
+
+    <section class="section" id="care">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">База знаний</p>
+            <h2>Базовый уход за комнатными растениями</h2>
+          </div>
+        </div>
+        <div class="tips-grid">
+          <article class="tip-card">
+            <div class="tip-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v3m6.4.6-2.1 2.1M21 12h-3M6.7 8.7 4.6 6.6M3 12h3m1.7 5.3-2.1 2.1M12 18v3m6.4-.7L16.3 18"/><circle cx="12" cy="12" r="4"/></svg></div>
+            <h3>Свет важнее подоконника</h3>
+            <p>Смотрите не на сторону света, а на то, сколько часов в комнате действительно светло без прямых лучей — это удобнее оценивать вечером зимой и утром летом.</p>
+          </article>
+          <article class="tip-card">
+            <div class="tip-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12Z"/></svg></div>
+            <h3>Поливайте по весу горшка</h3>
+            <p>Поднимайте горшок до и после полива — с опытом вы начнёте определять сухость грунта по весу точнее, чем по календарю.</p>
+          </article>
+          <article class="tip-card">
+            <div class="tip-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20 20 4M9 4H4v5M15 20h5v-5"/></svg></div>
+            <h3>Раз в сезон — поворот и обрезка</h3>
+            <p>Поворачивайте растение к свету каждые 2–3 недели и убирайте сухие листья — это стимулирует рост новых побегов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--color-surface-alt);">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Как проходит заказ</p>
+            <h2>От выбора до вазона на подоконнике</h2>
+          </div>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <h3>Выбираете растение</h3>
+            <p>По фильтрам в каталоге или с помощью теста «Подбери растение» — под свет, опыт и наличие питомцев.</p>
+          </div>
+          <div class="step-card">
+            <h3>Оформляете заказ</h3>
+            <p>Указываете способ доставки и контакты. Промокод и скидки применяются сразу в корзине.</p>
+          </div>
+          <div class="step-card">
+            <h3>Получаете растение</h3>
+            <p>Курьер привозит растение в термокоробе или вы забираете его в шоуруме в удобное время.</p>
+          </div>
+          <div class="step-card">
+            <h3>Ухаживаете уверенно</h3>
+            <p>В карточке каждого растения — инструкция по поливу, свету и температуре на первые месяцы.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Отзывы</p>
+            <h2>Что говорят покупатели</h2>
+          </div>
+        </div>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+          <blockquote class="testimonial-card">
+            <p class="testimonial-card__quote">«Взяла замиокулькас как первое растение вообще — жив уже полгода, хотя я классический "убийца кактусов". Понравилось, что на карточке честно написали про редкий полив».</p>
+            <p class="testimonial-card__author">— Марина, покупательница каталога «Для новичков»</p>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p class="testimonial-card__quote">«Прошла тест на сайте, получила три варианта под моё окно на север — взяла калатею, прижилась с первого раза, хотя раньше она у меня не получалась».</p>
+            <p class="testimonial-card__author">— Ольга, тест «Подбери растение»</p>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p class="testimonial-card__quote">«Заказывал крупномер — арека приехала аккуратно упакованной, курьер помог занести на пятый этаж. Долго выбирал между пальмой и стрелицией, менеджер по телефону подсказал по размеру комнаты».</p>
+            <p class="testimonial-card__author">— Дмитрий, доставка курьером</p>
+          </blockquote>
+        </div>
+        <p class="disclaimer">Отзывы приведены в демонстрационных целях и не относятся к реальным людям или сделкам.</p>
+      </div>
+    </section>
+
+    <section class="section" id="faq" style="background:var(--color-surface-alt);">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Вопросы и ответы</p>
+            <h2>Доставка, оплата и гарантии</h2>
+          </div>
+        </div>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+          <article class="feature-card">
+            <h3>Как быстро приедет заказ?</h3>
+            <p>Курьер доставляет по Москве в течение 2–4 дней после подтверждения заказа, в удобный получателю временной интервал.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Что если растение не приживётся?</h3>
+            <p>В карточке товара указан честный уровень сложности ухода — если он вам не подходит, менеджер поможет подобрать замену на более простой вид.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Можно забрать самому?</h3>
+            <p>Да, при оформлении заказа выберите самовывоз — растение будет ждать вас в шоуруме на Садовой улице.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split-section" style="background:var(--color-surface); border:1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6);">
+        <div>
+          <p class="eyebrow">Рассылка</p>
+          <h2>Растение недели на почту</h2>
+          <p>Раз в неделю присылаем подборку сезонных растений и советы по уходу. Никакого спама — отписаться можно в один клик.</p>
+        </div>
+        <form class="newsletter-form" data-newsletter-form novalidate>
+          <label class="visually-hidden" for="newsletter-email">Электронная почта</label>
+          <input id="newsletter-email" type="email" placeholder="you@example.com" autocomplete="email" required>
+          <button type="submit" class="btn btn--accent">Подписаться</button>
+          <p class="form-hint" style="width:100%;"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="color:#fff;">FLORARIUM</a>
+        <p style="color:#c7d0bd;">Растения, которые правда приживаются. Магазин комнатных растений и аксессуаров для дома в Москве.</p>
+      </div>
+      <div>
+        <h3>Каталог</h3>
+        <ul>
+          <li><a href="catalog.html?category=beginner">Для новичков</a></li>
+          <li><a href="catalog.html?category=succulents">Суккуленты и кактусы</a></li>
+          <li><a href="catalog.html?category=palms">Пальмы и крупномеры</a></li>
+          <li><a href="catalog.html?category=rare">Коллекционные</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Покупателям</h3>
+        <ul>
+          <li><a href="favorites.html">Избранное</a></li>
+          <li><a href="#care">Уход за растениями</a></li>
+          <li><a href="#faq">Доставка и оплата</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Контакты</h3>
+        <ul>
+          <li>Москва, ул. Садовая, 14</li>
+          <li><a href="tel:+74951234567">+7 (495) 123-45-67</a></li>
+          <li><a href="mailto:hello@florarium.shop">hello@florarium.shop</a></li>
+          <li>Ежедневно 10:00–21:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year></span> FLORARIUM. Демонстрационный проект для портфолио, не является действующим магазином.</p>
+    </div>
+  </footer>
+
+  <!-- Мобильное меню -->
+  <dialog id="mobile-nav" aria-label="Мобильное меню">
+    <div class="mobile-nav__inner">
+      <div class="mobile-nav__header">
+        <span class="logo">FLORARIUM</span>
+        <button type="button" class="icon-btn" data-nav-close aria-label="Закрыть меню">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <nav aria-label="Мобильная навигация">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="favorites.html">Избранное</a></li>
+          <li><a href="index.html#care">Уход за растениями</a></li>
+          <li><a href="index.html#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </dialog>
+
+  <!-- Корзина -->
+  <dialog id="cart-drawer" aria-label="Корзина">
+    <div class="drawer__inner">
+      <div class="drawer__header">
+        <h2 style="margin:0;">Корзина</h2>
+        <button type="button" class="icon-btn" data-close-cart aria-label="Закрыть корзину">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="drawer__body">
+        <ul class="cart-list" data-cart-body></ul>
+      </div>
+      <div class="drawer__footer" data-cart-footer hidden>
+        <form class="promo-form" data-promo-form>
+          <label class="visually-hidden" for="promo-input">Промокод</label>
+          <input id="promo-input" type="text" placeholder="Промокод, напр. LISTOK10">
+          <button type="submit" class="btn btn--secondary btn--sm">Применить</button>
+        </form>
+        <p class="form-hint" data-promo-message></p>
+        <div class="summary-row"><span>Сумма</span><span data-cart-subtotal>0 ₽</span></div>
+        <div class="summary-row" data-cart-discount-row hidden><span>Скидка</span><span data-cart-discount>0 ₽</span></div>
+        <div class="summary-row summary-row--total"><span>Итого</span><span data-cart-total>0 ₽</span></div>
+        <button type="button" class="btn btn--accent btn--block" data-open-checkout>Оформить заказ</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Быстрый просмотр товара -->
+  <dialog id="product-modal" aria-labelledby="product-modal-title">
+    <div class="modal__inner">
+      <button type="button" class="icon-btn modal__close" data-close-modal aria-label="Закрыть окно">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="product-modal" data-product-modal>
+        <div class="product-modal__media" data-product-media></div>
+        <div class="product-modal__info">
+          <div class="product-modal__badges" data-product-badges></div>
+          <p class="product-modal__category" data-product-category></p>
+          <h2 id="product-modal-title" data-product-name></h2>
+          <p class="product-modal__latin" data-product-latin></p>
+          <div class="product-modal__price-row">
+            <span data-product-price></span>
+            <s data-product-old-price hidden></s>
+          </div>
+          <p class="product-modal__rating" data-product-rating></p>
+          <p data-product-desc></p>
+          <div class="product-modal__meta-row">
+            <div><span class="meta-label">Сложность</span><strong data-product-difficulty></strong></div>
+            <div><span class="meta-label">Размер</span><strong data-product-size></strong></div>
+          </div>
+          <ul class="care-list" data-product-care></ul>
+          <div class="product-modal__actions">
+            <div class="qty-control" data-qty>
+              <button type="button" class="qty-btn" data-qty-step="down" aria-label="Уменьшить количество">−</button>
+              <span class="qty-value" data-qty-value>1</span>
+              <button type="button" class="qty-btn" data-qty-step="up" aria-label="Увеличить количество">+</button>
+            </div>
+            <button type="button" class="btn btn--accent" data-add-to-cart>В корзину</button>
+            <button type="button" class="icon-btn" data-wishlist-toggle aria-label="В избранное">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5c-.3 0-.6-.1-.8-.3C7.6 17.1 4 13.9 4 10c0-2.8 2.2-5 5-5 1.5 0 2.9.7 3.8 1.9C13.7 5.7 15.1 5 16.6 5c2.8 0 5 2.2 5 5 0 3.9-3.6 7.1-7.2 10.2-.2.2-.5.3-.8.3Z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="related-section">
+        <h4>Похожие растения</h4>
+        <div class="related-grid" data-product-related></div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Квиз -->
+  <dialog id="quiz-modal" aria-labelledby="quiz-title">
+    <div class="modal__inner">
+      <button type="button" class="icon-btn modal__close" data-close-modal aria-label="Закрыть окно">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <h2 id="quiz-title">Подбери растение</h2>
+      <p class="quiz-progress" data-quiz-progress>Вопрос 1 из 3</p>
+      <div data-quiz-body></div>
+      <div class="quiz-footer">
+        <button type="button" class="btn btn--secondary" data-quiz-back hidden>Назад</button>
+        <button type="button" class="btn btn--secondary" data-quiz-restart hidden>Пройти заново</button>
+        <button type="button" class="btn btn--accent" data-quiz-next style="margin-left:auto;">Далее</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Оформление заказа -->
+  <dialog id="checkout-modal" aria-labelledby="checkout-title">
+    <div class="modal__inner">
+      <button type="button" class="icon-btn modal__close" data-close-modal aria-label="Закрыть окно">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <h2 id="checkout-title">Оформление заказа</h2>
+      <form data-checkout-form novalidate>
+        <ul class="checkout-items" data-checkout-summary></ul>
+        <div class="summary-row" data-checkout-discount-row hidden><span>Скидка</span><span data-checkout-discount>0 ₽</span></div>
+        <div class="summary-row summary-row--total" style="margin-bottom:var(--space-4);"><span>Итого</span><span data-checkout-total>0 ₽</span></div>
+
+        <div class="field">
+          <label for="checkout-name">Имя и фамилия</label>
+          <input id="checkout-name" name="name" type="text" autocomplete="name" required>
+          <p class="form-hint"></p>
+        </div>
+        <div class="field">
+          <label for="checkout-phone">Телефон</label>
+          <input id="checkout-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required>
+          <p class="form-hint"></p>
+        </div>
+        <div class="field">
+          <label for="checkout-email">E-mail</label>
+          <input id="checkout-email" name="email" type="email" autocomplete="email" required>
+          <p class="form-hint"></p>
+        </div>
+        <div class="field">
+          <span id="delivery-label" style="font-weight:600;font-size:.9rem;">Способ доставки</span>
+          <div class="radio-row" role="radiogroup" aria-labelledby="delivery-label">
+            <label class="radio-option"><input type="radio" name="delivery" value="courier" checked> Курьером</label>
+            <label class="radio-option"><input type="radio" name="delivery" value="pickup"> Самовывоз из шоурума</label>
+          </div>
+        </div>
+        <div class="field" data-address-row>
+          <label for="checkout-address">Адрес доставки</label>
+          <input id="checkout-address" name="address" type="text" autocomplete="street-address">
+          <p class="form-hint"></p>
+        </div>
+        <div class="field">
+          <label for="checkout-comment">Комментарий к заказу (необязательно)</label>
+          <textarea id="checkout-comment" name="comment" rows="2"></textarea>
+        </div>
+        <p class="disclaimer">Это демонстрационный проект: заказ не отправляется на реальный сервер, оплата не производится.</p>
+        <button type="submit" class="btn btn--accent btn--block">Подтвердить заказ</button>
+      </form>
+      <div class="order-success" data-checkout-success hidden>
+        <div class="order-success__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h2>Заказ оформлен!</h2>
+        <p>Номер вашего заказа — <strong data-order-number></strong></p>
+        <div class="order-summary">
+          <div class="summary-row"><span>Итого к оплате</span><strong data-order-total></strong></div>
+          <div class="summary-row"><span>Подтверждение отправлено на</span><strong data-order-email></strong></div>
+        </div>
+        <p class="disclaimer">Это демо-проект — письмо на самом деле не отправляется.</p>
+        <button type="button" class="btn btn--secondary" data-checkout-done>Готово</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/home.js"></script>
+  <script>
+    document.querySelectorAll("[data-hero-plant]").forEach((el) => {
+      const plant = App.util.findPlant(el.getAttribute("data-hero-plant"));
+      if (plant) el.innerHTML = App.icons.plant(plant.shape, plant.colors, "transparent");
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

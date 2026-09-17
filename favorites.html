@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Избранное — FLORARIUM</title>
+  <meta name="description" content="Сохранённые растения FLORARIUM — список избранного хранится в вашем браузере.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2218%22 font-size=%2218%22>🌿</text></svg>">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo" aria-label="FLORARIUM — на главную">
+        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="20" fill="#2f5233"/>
+          <path d="M20 30c0-8 4-12 9-14-2 9-5 13-9 14Zm0 0c0-8-4-12-9-14 2 9 5 13 9 14Z" fill="#e3ecdf"/>
+        </svg>
+        FLORARIUM
+      </a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="favorites.html" aria-current="page">Избранное</a></li>
+          <li><a href="index.html#care">Уход за растениями</a></li>
+          <li><a href="index.html#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="favorites.html" class="icon-btn icon-btn--badged" aria-label="Избранное">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5c-.3 0-.6-.1-.8-.3C7.6 17.1 4 13.9 4 10c0-2.8 2.2-5 5-5 1.5 0 2.9.7 3.8 1.9C13.7 5.7 15.1 5 16.6 5c2.8 0 5 2.2 5 5 0 3.9-3.6 7.1-7.2 10.2-.2.2-.5.3-.8.3Z"/></svg>
+          <span class="badge-count" data-wish-count>0</span>
+        </a>
+        <button type="button" class="icon-btn icon-btn--badged" data-open-cart aria-label="Открыть корзину">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h15l-1.6 8.6a2 2 0 0 1-2 1.65H9.1a2 2 0 0 1-2-1.65L5 3H2M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm9 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="badge-count" data-cart-count>0</span>
+        </button>
+        <button type="button" class="nav-toggle" data-nav-toggle aria-haspopup="dialog" aria-label="Открыть меню">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-head">
+      <div class="container">
+        <p class="breadcrumbs"><a href="index.html">Главная</a> / Избранное</p>
+        <h1>Избранное</h1>
+        <p><span data-favorites-count>0 растений</span> — список хранится в этом браузере (localStorage) и не пропадёт при обновлении страницы.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div class="grid" data-favorites-grid></div>
+        <div class="empty-state" data-favorites-empty hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 20.5c-.3 0-.6-.1-.8-.3C7.6 17.1 4 13.9 4 10c0-2.8 2.2-5 5-5 1.5 0 2.9.7 3.8 1.9C13.7 5.7 15.1 5 16.6 5c2.8 0 5 2.2 5 5 0 3.9-3.6 7.1-7.2 10.2-.2.2-.5.3-.8.3Z"/></svg>
+          <h3>Пока пусто</h3>
+          <p>Нажимайте на значок сердца на карточках товаров, чтобы сохранить растения для сравнения.</p>
+          <a href="catalog.html" class="btn btn--accent">Перейти в каталог</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="color:#fff;">FLORARIUM</a>
+        <p style="color:#c7d0bd;">Растения, которые правда приживаются. Магазин комнатных растений и аксессуаров для дома в Москве.</p>
+      </div>
+      <div>
+        <h3>Каталог</h3>
+        <ul>
+          <li><a href="catalog.html?category=beginner">Для новичков</a></li>
+          <li><a href="catalog.html?category=succulents">Суккуленты и кактусы</a></li>
+          <li><a href="catalog.html?category=palms">Пальмы и крупномеры</a></li>
+          <li><a href="catalog.html?category=rare">Коллекционные</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Покупателям</h3>
+        <ul>
+          <li><a href="favorites.html">Избранное</a></li>
+          <li><a href="index.html#care">Уход за растениями</a></li>
+          <li><a href="index.html#faq">Доставка и оплата</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Контакты</h3>
+        <ul>
+          <li>Москва, ул. Садовая, 14</li>
+          <li><a href="tel:+74951234567">+7 (495) 123-45-67</a></li>
+          <li><a href="mailto:hello@florarium.shop">hello@florarium.shop</a></li>
+          <li>Ежедневно 10:00–21:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year></span> FLORARIUM. Демонстрационный проект для портфолио, не является действующим магазином.</p>
+    </div>
+  </footer>
+
+  <dialog id="mobile-nav" aria-label="Мобильное меню">
+    <div class="mobile-nav__inner">
+      <div class="mobile-nav__header">
+        <span class="logo">FLORARIUM</span>
+        <button type="button" class="icon-btn" data-nav-close aria-label="Закрыть меню">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <nav aria-label="Мобильная навигация">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="favorites.html">Избранное</a></li>
+          <li><a href="index.html#care">Уход за растениями</a></li>
+          <li><a href="index.html#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </dialog>
+
+  <dialog id="cart-drawer" aria-label="Корзина">
+    <div class="drawer__inner">
+      <div class="drawer__header">
+        <h2 style="margin:0;">Корзина</h2>
+        <button type="button" class="icon-btn" data-close-cart aria-label="Закрыть корзину">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="drawer__body">
+        <ul class="cart-list" data-cart-body></ul>
+      </div>
+      <div class="drawer__footer" data-cart-footer hidden>
+        <form class="promo-form" data-promo-form>
+          <label class="visually-hidden" for="promo-input">Промокод</label>
+          <input id="promo-input" type="text" placeholder="Промокод, напр. LISTOK10">
+          <button type="submit" class="btn btn--secondary btn--sm">Применить</button>
+        </form>
+        <p class="form-hint" data-promo-message></p>
+        <div class="summary-row"><span>Сумма</span><span data-cart-subtotal>0 ₽</span></div>
+        <div class="summary-row" data-cart-discount-row hidden><span>Скидка</span><span data-cart-discount>0 ₽</span></div>
+        <div class="summary-row summary-row--total"><span>Итого</span><span data-cart-total>0 ₽</span></div>
+        <button type="button" class="btn btn--accent btn--block" data-open-checkout>Оформить заказ</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="product-modal" aria-labelledby="product-modal-title">
+    <div class="modal__inner">
+      <button type="button" class="icon-btn modal__close" data-close-modal aria-label="Закрыть окно">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="product-modal" data-product-modal>
+        <div class="product-modal__media" data-product-media></div>
+        <div class="product-modal__info">
+          <div class="product-modal__badges" data-product-badges></div>
+          <p class="product-modal__category" data-product-category></p>
+          <h2 id="product-modal-title" data-product-name></h2>
+          <p class="product-modal__latin" data-product-latin></p>
+          <div class="product-modal__price-row">
+            <span data-product-price></span>
+            <s data-product-old-price hidden></s>
+          </div>
+          <p class="product-modal__rating" data-product-rating></p>
+          <p data-product-desc></p>
+          <div class="product-modal__meta-row">
+            <div><span class="meta-label">Сложность</span><strong data-product-difficulty></strong></div>
+            <div><span class="meta-label">Размер</span><strong data-product-size></strong></div>
+          </div>
+          <ul class="care-list" data-product-care></ul>
+          <div class="product-modal__actions">
+            <div class="qty-control" data-qty>
+              <button type="button" class="qty-btn" data-qty-step="down" aria-label="Уменьшить количество">−</button>
+              <span class="qty-value" data-qty-value>1</span>
+              <button type="button" class="qty-btn" data-qty-step="up" aria-label="Увеличить количество">+</button>
+            </div>
+            <button type="button" class="btn btn--accent" data-add-to-cart>В корзину</button>
+            <button type="button" class="icon-btn" data-wishlist-toggle aria-label="В избранное">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5c-.3 0-.6-.1-.8-.3C7.6 17.1 4 13.9 4 10c0-2.8 2.2-5 5-5 1.5 0 2.9.7 3.8 1.9C13.7 5.7 15.1 5 16.6 5c2.8 0 5 2.2 5 5 0 3.9-3.6 7.1-7.2 10.2-.2.2-.5.3-.8.3Z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="related-section">
+        <h4>Похожие растения</h4>
+        <div class="related-grid" data-product-related></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="checkout-modal" aria-labelledby="checkout-title">
+    <div class="modal__inner">
+      <button type="button" class="icon-btn modal__close" data-close-modal aria-label="Закрыть окно">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <h2 id="checkout-title">Оформление заказа</h2>
+      <form data-checkout-form novalidate>
+        <ul class="checkout-items" data-checkout-summary></ul>
+        <div class="summary-row" data-checkout-discount-row hidden><span>Скидка</span><span data-checkout-discount>0 ₽</span></div>
+        <div class="summary-row summary-row--total" style="margin-bottom:var(--space-4);"><span>Итого</span><span data-checkout-total>0 ₽</span></div>
+
+        <div class="field">
+          <label for="checkout-name">Имя и фамилия</label>
+          <input id="checkout-name" name="name" type="text" autocomplete="name" required>
+          <p class="form-hint"></p>
+        </div>
+        <div class="field">
+          <label for="checkout-phone">Телефон</label>
+          <input id="checkout-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required>
+          <p class="form-hint"></p>
+        </div>
+        <div class="field">
+          <label for="checkout-email">E-mail</label>
+          <input id="checkout-email" name="email" type="email" autocomplete="email" required>
+          <p class="form-hint"></p>
+        </div>
+        <div class="field">
+          <span id="delivery-label" style="font-weight:600;font-size:.9rem;">Способ доставки</span>
+          <div class="radio-row" role="radiogroup" aria-labelledby="delivery-label">
+            <label class="radio-option"><input type="radio" name="delivery" value="courier" checked> Курьером</label>
+            <label class="radio-option"><input type="radio" name="delivery" value="pickup"> Самовывоз из шоурума</label>
+          </div>
+        </div>
+        <div class="field" data-address-row>
+          <label for="checkout-address">Адрес доставки</label>
+          <input id="checkout-address" name="address" type="text" autocomplete="street-address">
+          <p class="form-hint"></p>
+        </div>
+        <div class="field">
+          <label for="checkout-comment">Комментарий к заказу (необязательно)</label>
+          <textarea id="checkout-comment" name="comment" rows="2"></textarea>
+        </div>
+        <p class="disclaimer">Это демонстрационный проект: заказ не отправляется на реальный сервер, оплата не производится.</p>
+        <button type="submit" class="btn btn--accent btn--block">Подтвердить заказ</button>
+      </form>
+      <div class="order-success" data-checkout-success hidden>
+        <div class="order-success__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h2>Заказ оформлен!</h2>
+        <p>Номер вашего заказа — <strong data-order-number></strong></p>
+        <div class="order-summary">
+          <div class="summary-row"><span>Итого к оплате</span><strong data-order-total></strong></div>
+          <div class="summary-row"><span>Подтверждение отправлено на</span><strong data-order-email></strong></div>
+        </div>
+        <p class="disclaimer">Это демо-проект — письмо на самом деле не отправляется.</p>
+        <button type="button" class="btn btn--secondary" data-checkout-done>Готово</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
